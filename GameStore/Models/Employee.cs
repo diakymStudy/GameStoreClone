@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Models;
 
-[Table("Customer")]
-public partial class Customer
+[Table("Employee")]
+public partial class Employee
 {
     [Key]
     public int Id { get; set; }
@@ -22,13 +22,4 @@ public partial class Customer
     public string Name { get; set; } = null!;
 
     public int? Phone { get; set; }
-
-    public int? CartId { get; set; }
-
-    [ForeignKey("CartId")]
-    [InverseProperty("Customers")]
-    public virtual Cart? Cart { get; set; }
-
-    [InverseProperty("Customer")]
-    public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
 }

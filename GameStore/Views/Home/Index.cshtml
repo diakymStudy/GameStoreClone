@@ -1,8 +1,43 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model GameStore.Models.Game
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body class="bg-image"style="
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVG7b2JrQ8L5ZAuAQ2vdJ0vsYUrkk0rBJ25g&usqp=CAU');
+    height: 100vh;">
 
+<div class="bg-image"style="
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVG7b2JrQ8L5ZAuAQ2vdJ0vsYUrkk0rBJ25g&usqp=CAU');
+    height: 100vh;">
+    <div class="row" style='justify-content: center'>
+        <form asp-controller="Game" asp-action="Index" method="get">
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" ss value="Search for Games" />
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<!--
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+-->
+
+

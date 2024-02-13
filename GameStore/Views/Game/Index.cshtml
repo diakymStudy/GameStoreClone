@@ -1,0 +1,56 @@
+﻿@model IEnumerable<GameStore.Models.Game>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<html>
+<head>
+    @*
+        bootstrap
+    *@
+</head>
+<body>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(x => x.Name)
+                    @*"Make&Model"*@
+                </th>
+                <th>
+                    @Html.DisplayNameFor(x => x.Year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(x => x.Rating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(x => x.Price)
+                </th>
+                <th>
+                    <a asp-controller="Game" asp-action="Add">Add Game</a>
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Game aGame in Model)
+            {
+                <tr>
+                    <td>@aGame.Name</td>
+                    <td>@aGame.Year</td>
+                    <td>@aGame.Rating</td>
+                    <td>@aGame.Price</td>
+                    <td>
+                        <a asp-controller="Game" asp-action="Details" asp-route-id="@aGame.Id">Details</a>
+                    </td>
+                    <td>
+                        <a asp-controller="WatchList" asp-action="AddToWatchList" asp-route-id="@aGame.Id">Add To Cart</a>
+                    </td>
+                </tr>
+            }
+            </div>
+        </tbody>
+    </table>
+</body>
+</html>

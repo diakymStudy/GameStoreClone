@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Game;
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(x => x.Name)
+                    @*"Make&Model"*@
+                </th>
+                <th>
+                    @Html.DisplayNameFor(x => x.Year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(x => x.Rating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(x => x.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(x => x.Publisher)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(x => x.Price)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>@Model.Name</td>
+                    <td>@Model.Year</td>
+                    <td>@Model.Rating</td>
+                    <td>@Model.Category</td>
+                    <td>@Model.Publisher</td>
+                    <td>@Model.Price</td>
+                    <td>
+                        <a asp-controller="Game" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@Model.Id">Add To Cart</a>
+                    </td>
+                <td>
+                    <a asp-controller="Game" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                </td>
+                </tr>
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

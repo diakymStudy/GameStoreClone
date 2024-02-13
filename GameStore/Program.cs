@@ -1,8 +1,20 @@
+using GameStore.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+builder.Services.AddDbContext<GameStoreDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GameStore"))
+    .EnableSensitiveDataLogging();
+
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
