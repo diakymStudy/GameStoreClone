@@ -22,4 +22,6 @@ public partial class Employee
     public string Name { get; set; } = null!;
 
     public int? Phone { get; set; }
+
+    public DateOnly StartDate { get; set; }
 }
